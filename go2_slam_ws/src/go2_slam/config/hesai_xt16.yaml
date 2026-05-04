@@ -1,0 +1,20 @@
+# Hesai XT16 ROS2 driver configuration
+# Place this file in the HesaiLidar_ROS2_SDK config directory or reference it
+# when launching the Hesai driver node.
+#
+# Source: HesaiLidar_ROS2_SDK / config/config.yaml template
+
+lidar:
+  - driver:
+      udp_port: 2368          # Default Hesai XT16 data port
+      ptc_port: 9347          # PTC (Pandar TCP Command) port
+      device_ip_or_pcap_path: "192.168.123.20"   # ← YOUR XT16 IP (ping 192.168.123.20 to verify)
+      pcap_repeat: false
+      pcap_play_in_order: false
+      source_type: 1          # 1 = online sensor
+      lidar_type: "XT16"
+    ros:
+      ros_frame_id: hesai_lidar            # Must match slam launch files
+      ros_recv_packet_topic: /hesai_packets
+      ros_send_packet_topic: /hesai_packets
+      ros_send_point_cloud_topic: /lidar_points   # Topic used by SLAM launch files

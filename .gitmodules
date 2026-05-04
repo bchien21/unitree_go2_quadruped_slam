@@ -1,0 +1,4 @@
+[submodule "go2_slam_ws/src/HesaiLidar_ROS_2.0"]
+	path = go2_slam_ws/src/HesaiLidar_ROS_2.0
+	url = https://github.com/bchien21/HesaiLidar_ROS_2.0.git
+

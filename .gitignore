@@ -1,0 +1,27 @@
+# Rosbag recordings
+rosbags/
+
+# Colcon build artifacts
+go2_slam_ws/build/
+go2_slam_ws/install/
+go2_slam_ws/log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ROS logs
+*.log
+log/
+
+# RTAB-Map databases (large binary files)
+*.db

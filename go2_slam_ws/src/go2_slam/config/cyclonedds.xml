@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  CycloneDDS 0.10+ config for the laptop side.
+
+  Interfaces:
+    eno1  — wired Ethernet to the Go2 (192.168.123.x subnet)
+    lo    — loopback so same-machine nodes can communicate
+
+  Add explicit peer for the Go2 so discovery works even if the
+  WiFi AP or switch filters multicast packets.
+
+  To use WiFi instead of Ethernet, swap eno1 for your WiFi
+  interface name (e.g. wlp0s20f3) and update the peer address.
+-->
+<CycloneDDS xmlns="https://cdds.io/config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+  <Domain Id="any">
+    <General>
+      <Interfaces>
+        <NetworkInterface name="eno1" priority="default" multicast="default"/>
+        <NetworkInterface name="lo"   multicast="true"/>
+      </Interfaces>
+      <AllowMulticast>true</AllowMulticast>
+      <EnableMulticastLoopback>true</EnableMulticastLoopback>
+      <MaxMessageSize>65500B</MaxMessageSize>
+      <FragmentSize>4000B</FragmentSize>
+    </General>
+    <Discovery>
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>100</MaxAutoParticipantIndex>
+      <Peers>
+        <Peer address="127.0.0.1"/>
+        <Peer address="192.168.123.18"/>
+      </Peers>
+    </Discovery>
+    <Tracing>
+      <Verbosity>warning</Verbosity>
+      <OutputFile>stderr</OutputFile>
+    </Tracing>
+  </Domain>
+</CycloneDDS>
