@@ -21,4 +21,5 @@ docker run -it --rm \
     --volume "$PROJECT_ROOT/go2_slam_ws":/workspace/go2_slam_ws:rw \
     --volume "$PROJECT_ROOT/scripts":/workspace/scripts:rw \
     --volume "$PROJECT_ROOT/rosbags":/workspace/rosbags:rw \
+    --volume "$PROJECT_ROOT/unitree_sdk2_python":/workspace/unitree_sdk2_python:rw \
     go2_slam:humble

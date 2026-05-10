@@ -2,3 +2,7 @@
 	path = go2_slam_ws/src/HesaiLidar_ROS_2.0
 	url = https://github.com/bchien21/HesaiLidar_ROS_2.0.git
 
+[submodule "unitree_sdk2_python"]
+	path = unitree_sdk2_python
+	url = https://github.com/unitreerobotics/unitree_sdk2_python.git
+
