@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # ── Unitree SDK2 Python dependencies ───────────────────────────────────────
-RUN pip3 install --no-cache-dir cyclonedds==0.10.2 numpy opencv-python
+RUN pip3 install --no-cache-dir numpy opencv-python
 
 # ── Quality-of-life tools ───────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
