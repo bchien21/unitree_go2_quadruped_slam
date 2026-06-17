@@ -1,8 +1,6 @@
-import os
-from glob import glob
 from setuptools import find_packages, setup
 
-package_name = 'go2_rtabmap_slam'
+package_name = 'go2_nav2'
 
 setup(
     name=package_name,
@@ -12,9 +10,6 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-
-        # --- REGISTER THE LAUNCH FILES ---
-        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -29,7 +24,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'unitree_odom_to_tf = go2_rtabmap_slam.unitree_odom_to_tf:main',
         ],
     },
 )
