@@ -17,6 +17,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-colcon-common-extensions \
     && rm -rf /var/lib/apt/lists/*
 
+# ── Nav2 navigation stack ────────────────────────────────────────────────────
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-humble-nav2-bringup \
+    ros-humble-nav2-bt-navigator \
+    ros-humble-nav2-lifecycle-manager \
+    && rm -rf /var/lib/apt/lists/*
+
 # ── Hesai SDK build deps ────────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libboost-all-dev \
