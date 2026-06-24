@@ -45,7 +45,7 @@ class OdomToTf(Node):
         self._last_pub_ns = now_ns
 
         t = TransformStamped()
-        t.header = msg.header
+        t.header.stamp = self.get_clock().now().to_msg()
         t.header.frame_id = self._parent
         t.child_frame_id = self._child
         t.transform.translation.x = msg.pose.pose.position.x

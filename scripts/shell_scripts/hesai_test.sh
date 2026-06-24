@@ -10,5 +10,10 @@ tmux send-keys -t "$SESSION" \
     "source /opt/ros/humble/setup.bash && source /workspace/go2_slam_ws/install/setup.bash && ros2 launch hesai_ros_driver start.py 2>&1 | grep -v retcode" \
     Enter
 
+# tmux split-window -h -t "$SESSION"
+# tmux send-keys -t "$SESSION" \
+#     "source /opt/ros/humble/setup.bash && source /workspace/go2_slam_ws/install/setup.bash && sleep 3 && ros2 launch go2_rtabmap_slam hesai_lidar_slam.launch.py" \
+#     Enter
+
 tmux attach-session -t "$SESSION"
 
