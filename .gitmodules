@@ -9,3 +9,6 @@
 [submodule "go2_slam_ws/src/kiss-icp"]
 	path = go2_slam_ws/src/kiss-icp
 	url = https://github.com/PRBonn/kiss-icp.git
+[submodule "go2_slam_ws/src/kiss-slam-ros2"]
+	path = go2_slam_ws/src/kiss-slam-ros2
+	url = https://github.com/abwerby/kiss-slam-ros2.git

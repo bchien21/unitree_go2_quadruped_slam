@@ -2,18 +2,12 @@ FROM ros:humble-ros-base
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# ── ROS 2 SLAM / sensor packages ────────────────────────────────────────────
+# ── ROS 2 core packages ──────────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ros-humble-rtabmap-ros \
-    ros-humble-rtabmap-slam \
-    ros-humble-rtabmap-viz \
-    ros-humble-realsense2-camera \
     ros-humble-rmw-cyclonedds-cpp \
     ros-humble-tf2-ros \
-    ros-humble-cv-bridge \
     ros-humble-rviz2 \
     ros-humble-rclpy \
-    python3-opencv \
     python3-colcon-common-extensions \
     && rm -rf /var/lib/apt/lists/*
 
@@ -31,6 +25,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpcap-dev \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
+
+# ── KISS-SLAM build deps (Eigen, SuiteSparse, newer CMake) ───────────────────
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libeigen3-dev \
+    libsuitesparse-dev \
+    && rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir \
+    "cmake>=3.24" \
+    scikit-build-core \
+    pyproject_metadata \
+    pathspec \
+    pybind11 \
+    ninja
 
 # ── Quality-of-life tools ───────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
