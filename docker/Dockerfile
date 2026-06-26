@@ -37,7 +37,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pyproject_metadata \
     pathspec \
     pybind11 \
-    ninja
+    ninja \
+    kiss-icp \
+    kiss-slam \
+    scipy
 
 # ── Quality-of-life tools ───────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
