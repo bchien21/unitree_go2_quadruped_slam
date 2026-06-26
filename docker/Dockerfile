@@ -38,7 +38,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pathspec \
     pybind11 \
     ninja \
-    kiss-icp \
     kiss-slam \
     scipy
 
@@ -60,6 +59,7 @@ WORKDIR /workspace
 
 # ── Shell environment ────────────────────────────────────────────────────────
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc && \
+    echo '[ -f /workspace/kiss-slam-ros2/ros2/install/setup.bash ] && source /workspace/kiss-slam-ros2/ros2/install/setup.bash' >> /root/.bashrc && \
     echo '[ -f /workspace/go2_slam_ws/install/setup.bash ] && source /workspace/go2_slam_ws/install/setup.bash' >> /root/.bashrc
 
 CMD ["bash"]

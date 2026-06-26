@@ -15,7 +15,7 @@
 
 SESSION="kiss_slam"
 
-SETUP="source /opt/ros/humble/setup.bash && source /workspace/go2_slam_ws/install/setup.bash"
+SETUP="source /opt/ros/humble/setup.bash && source /workspace/kiss-slam-ros2/ros2/install/setup.bash && source /workspace/go2_slam_ws/install/setup.bash"
 
 # Lidar mount offset relative to base_link: x y z (m)  yaw pitch roll (rad).
 # Placeholder — replace with the real XT16 mount pose on the Go2.

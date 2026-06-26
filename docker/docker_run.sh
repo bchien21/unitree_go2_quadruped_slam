@@ -19,6 +19,7 @@ docker run -it --rm \
     --env RMW_IMPLEMENTATION=rmw_cyclonedds_cpp \
     --volume "$XAUTH_FILE:/root/.Xauthority:ro" \
     --volume "$PROJECT_ROOT/go2_slam_ws":/workspace/go2_slam_ws:rw \
+    --volume "$PROJECT_ROOT/kiss-slam-ros2":/workspace/kiss-slam-ros2:rw \
     --volume "$PROJECT_ROOT/scripts":/workspace/scripts:rw \
     --volume "$PROJECT_ROOT/rosbags":/workspace/rosbags:rw \
     go2_slam:humble

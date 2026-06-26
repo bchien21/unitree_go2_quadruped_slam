@@ -6,6 +6,6 @@
 	path = unitree_sdk2_python
 	url = https://github.com/unitreerobotics/unitree_sdk2_python.git
 
-[submodule "go2_slam_ws/src/kiss-slam-ros2"]
-	path = go2_slam_ws/src/kiss-slam-ros2
+[submodule "kiss-slam-ros2"]
+	path = kiss-slam-ros2
 	url = https://github.com/abwerby/kiss-slam-ros2.git
