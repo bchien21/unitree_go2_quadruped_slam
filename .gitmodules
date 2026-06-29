@@ -8,4 +8,4 @@
 
 [submodule "kiss-slam-ros2"]
 	path = kiss-slam-ros2
-	url = https://github.com/abwerby/kiss-slam-ros2.git
+	url = https://github.com/bchien21/kiss-slam-ros2.git
